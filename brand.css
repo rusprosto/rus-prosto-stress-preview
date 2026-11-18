@@ -1,0 +1,17 @@
+/* Фирстиль школы «Русский — проСТО». Собирается из brand.json скриптом apply_brand.py: правь brand.json, не этот файл. */
+@font-face{font-family:'Comfortaa';src:url('fonts/Comfortaa-700.ttf');font-weight:700;font-display:swap}
+@font-face{font-family:'Manrope';src:url('fonts/Manrope-400.ttf');font-weight:400;font-display:swap}
+@font-face{font-family:'Manrope';src:url('fonts/Manrope-700.ttf');font-weight:700;font-display:swap}
+:root{
+  --bg:#FFF2F5;
+  --surface:#FFFFFF;
+  --text:#3A0F1E;
+  --muted:#8A5566;
+  --accent:#C2185B;
+  --accent-text:#FFFFFF;
+  --dark:#2A0A15;
+  --font-head:'Comfortaa',system-ui,sans-serif;
+  --font-text:'Manrope',system-ui,sans-serif;
+  --head-weight:700;
+  --radius:14px;
+}

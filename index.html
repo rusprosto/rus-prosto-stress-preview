@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex"><meta name="theme-color" content="#FFF2F5"><title>Тренажёр ударений · Русский — проСТО</title>
+<link rel="stylesheet" href="brand.css"><link rel="stylesheet" href="ui.css">
+<style>
+  body{background:var(--bg)}
+  .wrap{max-width:900px;padding-top:14px}
+  .brandline{font:700 17px var(--font-head);color:var(--accent);padding:5px 0 14px}
+  .hero{display:grid;grid-template-columns:126px 1fr;gap:18px;align-items:center;background:var(--surface);border-radius:22px;padding:18px;box-shadow:0 3px 18px rgba(80,12,40,.07)}
+  .portrait{width:126px;height:148px;object-fit:cover;object-position:center 20%;border-radius:18px;border:4px solid white;box-shadow:0 0 0 2px #f4c4d5}
+  .hello{font-size:16px;line-height:1.45}
+  .hello strong{font-family:var(--font-head);font-size:19px;display:block;margin-bottom:5px}
+  .proof{font-weight:700;color:var(--accent);margin-top:6px}
+  .hero-title{text-align:center;margin:24px auto 8px;max-width:760px}
+  .hero-copy{text-align:center;color:var(--muted);max-width:680px;margin:0 auto 15px}
+  .source-note{text-align:center;color:var(--accent);font-size:14px;font-weight:700;margin:-5px auto 15px}
+  .start-wrap{text-align:center;margin:0 auto 26px}
+  .start-btn{font:700 17px var(--font-text);min-width:min(100%,280px);min-height:56px}
+  .micro{font-size:14px;color:var(--muted);margin-top:8px}
+  .panel{background:var(--surface);border-radius:22px;padding:22px;box-shadow:0 3px 18px rgba(80,12,40,.06);scroll-margin-top:12px}
+  .game-head{display:flex;justify-content:space-between;align-items:center;gap:12px;color:var(--muted);font-size:15px}
+  .track{height:8px;border-radius:9px;background:#f7dce6;margin:12px 0 20px;overflow:hidden}
+  .track>i{display:block;height:100%;width:0;background:var(--accent);transition:width .25s}
+  .prompt{text-align:center;color:var(--muted);font-size:16px;margin:8px 0 12px}
+  .hint{text-align:center;color:var(--muted);font-size:15px;min-height:0;margin:-6px 0 8px}
+  .word{text-align:center;font:700 clamp(34px,9vw,58px) var(--font-head);line-height:1.3;overflow-wrap:anywhere;min-height:80px;padding:10px 0}
+  .letter{display:inline-block}
+  .vowel-choice{font:inherit;color:var(--text);border:0;border-radius:10px;min-width:40px;min-height:52px;padding:0 3px;background:#fff0f5;cursor:pointer;touch-action:manipulation}
+  .vowel-choice:hover{background:#f8d5e3}
+  .vowel-choice:focus-visible,.btn:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+  .vowel-choice.correct{background:#e4f5eb;color:#16733d}
+  .vowel-choice.wrong{background:#fde6e6;color:#ad2525}
+  .answer-text{text-align:center;font-size:17px;margin-top:8px;min-height:28px}
+  .game-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:18px}
+  .ghost{background:#fff;color:var(--accent);box-shadow:inset 0 0 0 2px #e9a8c1}
+  .hidden{display:none!important}
+  .result{text-align:center}
+  .result-score{font:700 clamp(38px,10vw,56px) var(--font-head);color:var(--accent)}
+  .mistakes{text-align:left;margin:18px 0}
+  .mistake-row{padding:10px 12px;border-radius:12px;background:#fff3f6;margin:7px 0}
+  .about{margin:30px 0 8px;background:var(--surface);border-radius:22px;padding:22px}
+  .about h2{font:700 23px var(--font-head);margin-bottom:12px}
+  .facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:16px 0}
+  .fact{background:#FFE8F0;padding:15px;border-radius:16px;min-height:138px;display:flex;flex-direction:column;justify-content:center}
+  .fact b{color:#E60078;display:block;margin-bottom:5px;font:700 clamp(46px,8.5vw,66px)/1.05 var(--font-head);letter-spacing:-.04em}
+  .fact span{font-size:16px;line-height:1.35}
+  .fact.primary{background:#E60078;color:#fff}
+  .fact.primary b{color:#fff}
+  .education{margin-top:14px;padding:13px 15px;border-left:4px solid #E60078;border-radius:0 12px 12px 0;background:#FFF2F5}
+  .cta{text-align:center;margin:16px 0 0}
+  .cta a{color:var(--accent);font-weight:700}
+  .small{font-size:14px;color:var(--muted)}
+  footer{margin-top:12px}
+  @media(max-width:520px){.wrap{padding:10px 12px 22px}.hero{grid-template-columns:82px 1fr;gap:12px;padding:12px;border-radius:18px}.portrait{width:82px;height:104px;border-radius:14px;border-width:3px}.hello{font-size:14px}.hello strong{font-size:16px;margin-bottom:2px}.proof{font-size:15px;margin-top:4px}.hero-title{margin-top:20px}.hero-copy{font-size:16px}.panel,.about{padding:17px;border-radius:18px}.facts{grid-template-columns:1fr 1fr}.vowel-choice{min-width:37px;min-height:48px}}
+  @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
+</style></head><body>
+<main class="wrap">
+  <div class="brandline">Русский — проСТО</div>
+  <section class="hero" aria-label="Знакомство с преподавателем">
+    <img class="portrait" src="photo.png" alt="Катерина Сергеевна">
+    <div class="hello"><strong>Привет! Я Катерина Сергеевна.</strong>Уже 7 лет готовлю ребят к ЕГЭ по русскому языку.<div class="proof">Средний балл моих учеников — 85</div></div>
+  </section>
+  <h1 class="hero-title">Проверь себя в ударениях ЕГЭ</h1>
+  <p class="hero-copy">Я сделала этот тренажёр, чтобы ты мог повторять ударения без скучной зубрёжки: выбирай вариант, сразу проверяй себя и возвращайся к словам, которые пока путаются.</p>
+  <p class="source-note">Список слов соответствует навигатору ФИПИ</p>
+  <div class="start-wrap"><button class="btn start-btn" id="start">Начать тренировку</button><div class="micro" id="savedNote">Бесплатно · без регистрации · прогресс сохранится в этом браузере</div></div>
+
+  <section class="panel" id="practice" aria-live="polite">
+    <div id="welcome"><h2 style="font:700 22px var(--font-head);margin-bottom:8px">Раунд до 10 слов</h2><p class="sub">Нажми на гласную, на которую, по-твоему, падает ударение. Ошибочные слова будут возвращаться в следующих десятках с интервалами.</p></div>
+    <div id="session" class="hidden">
+      <div class="game-head"><span id="position">1 из 10</span><span id="totalProgress"></span></div>
+      <div class="track"><i id="progress"></i></div>
+      <div class="prompt">На какую гласную падает ударение?</div>
+      <div id="hint" class="hint"></div>
+      <div id="word" class="word"></div>
+      <div id="feedback" class="answer-text" role="status"></div>
+      <div class="game-actions"><button id="next" class="btn hidden">Дальше</button></div>
+    </div>
+    <div id="result" class="result hidden">
+      <div class="result-score" id="score"></div><p id="resultText"></p>
+      <div class="mistakes" id="mistakes"></div>
+      <div class="game-actions"><button id="again" class="btn">Следующие 10 слов</button></div>
+    </div>
+  </section>
+
+  <section class="about">
+    <h2>О подготовке со мной</h2>
+    <p>Объясняю сложное простым языком и помогаю выстроить понятную систему подготовки к экзамену.</p>
+    <div class="facts">
+      <div class="fact primary"><b>100+</b><span>учеников подготовила к ЕГЭ</span></div>
+      <div class="fact"><b>85</b><span>средний балл моих учеников</span></div>
+      <div class="fact"><b>7 лет</b><span>готовлю к ЕГЭ по русскому языку</span></div>
+      <div class="fact"><b style="font-size:clamp(21px,4vw,30px);letter-spacing:0">МГУ · ВШЭ · КФУ</b><span>и Сеченовский университет — вузы, куда поступают мои выпускники</span></div>
+    </div>
+    <p class="education"><strong>Красный диплом</strong> филологического факультета МГУ им. Н. П. Огарёва</p>
+    <div class="cta"><p>Хочешь понять, как готовиться именно тебе?</p><p>На бесплатном пробном уроке разберём твой уровень и обсудим подготовку.</p><p style="margin-top:12px"><a href="https://t.me/agent_ege" target="_blank" rel="noopener">Написать Катерине Сергеевне в Telegram</a></p><p class="small">@agent_ege</p></div>
+  </section>
+</main>
+<footer>Тренажёр от школы «Русский — проСТО»</footer>
+<script id="data" type="application/json">{"title": "Проверь себя в ударениях ЕГЭ", "intro": "Тренажёр по заданию 4: отвечай, сразу проверяй себя и возвращайся к словам, которые пока путаются.", "photo": "photo.png", "hints": {"Отзыв": "о книге: «мнение, отклик»", "отзЫв": "посла из страны: «потребовать возвращения»"}, "words": ["аэропОрты", "бАнты", "бОроду", "бухгАлтеров", "вероисповЕдание", "водопровОд", "газопровОд", "граждАнство", "дефИс", "дешевИзна", "диспансЕр", "договорЁнность", "докумЕнт", "досУг", "еретИк", "жалюзИ", "знАчимость", "Иксы", "каталОг", "квартАл", "киломЕтр", "кОнусов", "корЫсть", "крАны", "кремЕнь", "кремнЯ", "лЕкторов", "лОктя", "локтЕй", "лЫжня", "мЕстностей", "намЕрение", "нЕдруг", "недУг", "некролОг", "нЕнависть", "нефтепровОд", "новостЕй", "нОгтя", "ногтЕй", "Отзыв", "отзЫв", "Отрочество", "партЕр", "портфЕль", "придАное", "призЫв", "свЁкла", "сирОты", "созЫв", "сосредотОчение", "срЕдства", "стАтуя", "столЯр", "тамОжня", "тОрты", "тУфля", "цемЕнт", "цЕнтнер", "цепОчка", "шАрфы", "шофЁр", "экспЕрт", "вернА", "знАчимый", "красИвее", "красИвейший", "кУхонный", "ловкА", "мозаИчный", "оптОвый", "прозорлИвый", "прозорлИва", "слИвовый", "бралА", "бралАсь", "взялА", "взялАсь", "влИлась", "ворвалАсь", "воспринЯть", "воспринялА", "воссоздалА", "вручИт", "гналА", "гналАсь", "добралА", "добралАсь", "дождалАсь", "дозвонИтся", "дозИровать", "ждалА", "закУпорить", "занЯть", "зАнял", "занялА", "зАняли", "заперлА", "запломбировАть", "защемИт", "звалА", "звонИт", "кАпнуть", "клАла", "клЕить", "крАлась", "кровоточИть", "лгалА", "лилА", "лилАсь", "наделИт", "надорвалАсь", "назвалАсь", "накренИтся", "налилА", "нарвалА", "начАть", "нАчал", "началА", "нАчали", "обзвонИт", "облегчИть", "облегчИт", "облилАсь", "обнялАсь", "обогналА", "ободралА", "ободрИть", "ободрИт", "ободрИться", "ободрИтся", "обострИть", "одолжИть", "одолжИт", "озлОбить", "оклЕить", "окружИт", "опОшлить", "освЕдомиться", "освЕдомится", "отбылА", "отдалА", "откУпорить", "отозвалА", "отозвалАсь", "перезвонИт", "перелилА", "плодоносИть", "пломбировАть", "повторИт", "позвалА", "позвонИт", "полилА", "положИть", "положИл", "понЯть", "понялА", "послАла", "прибЫть", "прИбыл", "прибылА", "прИбыли", "принЯть", "прИнял", "принялА", "прИняли", "рвалА", "сверлИт", "снялА", "создалА", "сорвалА", "убралА", "углубИть", "укрепИт", "чЕрпать", "щемИт", "щЁлкать", "довезЁнный", "зАгнутый", "зАнятый", "занятА", "зАпертый", "заселЁнный", "заселенА", "кровоточАщий", "нажИвший", "налИвший", "нанЯвшийся", "начАвший", "нАчатый", "низведЁнный", "облегчЁнный", "ободрЁнный", "обострЁнный", "отключЁнный", "повторЁнный", "поделЁнный", "понЯвший", "прИнятый", "принятА", "приручЁнный", "прожИвший", "снятА", "сОгнутый", "углублЁнный", "закУпорив", "начАв", "начАвшись", "отдАв", "понЯв", "прибЫв", "создАв", "вОвремя", "дОверху", "дОнизу", "дОсуха", "зАсветло", "надОлго", "ненадОлго"], "source_note": "Рабочая подборка собрана по орфоэпическому списку в навигаторе ФИПИ для ЕГЭ-2026. До дополнительной сверки полный список не обозначать на странице как полностью соответствующий ФИПИ-2026."}</script>
+<script id="brand" type="application/json">{"school": "Русский — проСТО", "contacts": {"telegram": "https://t.me/agent_ege", "whatsapp": "", "phone": "+7 952 073-35-16", "site": "", "vk": "https://vk.ru/tochka_ege"}, "address": "ты"}</script>
+<script src="shell.js"></script>
+<script>
+const VOWELS = new Set('аеёиоуыэюя');
+const ITEMS = [...new Set(DATA.words)].map(raw => {
+  const marked = [...raw];
+  const stress = marked.findIndex(ch => ch === ch.toUpperCase() && ch.toLowerCase() !== ch && VOWELS.has(ch.toLowerCase()));
+  if (stress < 0 || marked.filter(ch => ch === ch.toUpperCase() && ch.toLowerCase() !== ch && VOWELS.has(ch.toLowerCase())).length !== 1) return null;
+  return { word: raw.toLowerCase(), stress, key: raw.toLowerCase()+':'+stress, hint: DATA.hints?.[raw] || '' };
+}).filter(Boolean);
+const STORAGE_KEY = 'rus-prosto-stress-v1';
+let state = { stats: {}, totalAnswers: 0, session: [], wrong: [], index: 0, score: 0, answered: false };
+try {
+  const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+  state.stats = saved.stats || {};
+  state.totalAnswers = Number.isFinite(saved.totalAnswers) ? saved.totalAnswers : Object.values(state.stats).reduce((sum, stat) => sum + (stat.seen || 0), 0);
+} catch (_) {}
+for(const item of ITEMS){
+  const stat=state.stats[item.key];
+  if(stat && stat.wrong>0 && stat.streak<2 && !stat.nextReviewAt) stat.nextReviewAt=state.totalAnswers+4;
+}
+const byId = id => document.getElementById(id);
+function save(){ try { localStorage.setItem(STORAGE_KEY, JSON.stringify({stats:state.stats,totalAnswers:state.totalAnswers})); } catch (_) {} }
+function statsFor(item){ return state.stats[item.key] || (state.stats[item.key] = {seen:0, right:0, wrong:0, streak:0}); }
+function progressText(){
+  const mastered = ITEMS.filter(it => (state.stats[it.key]?.streak || 0) >= 2).length;
+  byId('totalProgress').textContent = `Уверенно: ${mastered} из ${ITEMS.length}`;
+}
+function unseenItems(){ return ITEMS.filter(it => !state.stats[it.key]?.seen); }
+function dueReviewItems(){ return ITEMS.filter(it => {
+  const stat=state.stats[it.key]; return stat?.nextReviewAt && stat.nextReviewAt <= state.totalAnswers + 10;
+}).sort((a,b)=>state.stats[a.key].nextReviewAt-state.stats[b.key].nextReviewAt); }
+function makeNextSession(){
+  const fresh=unseenItems().sort(()=>Math.random()-.5), due=dueReviewItems(), reviews=[];
+  let lastPosition=-4;
+  for(const item of due){
+    if(reviews.length>=2) break;
+    const stat=state.stats[item.key];
+    const position=Math.max(fresh.length>=3?3:0, stat.nextReviewAt-state.totalAnswers-1, lastPosition+4);
+    const length=Math.min(10, fresh.length+reviews.length+1);
+    if(position>=length) continue;
+    reviews.push({item,position}); lastPosition=position;
+  }
+  const freshCount=Math.min(fresh.length,10-reviews.length);
+  const session=fresh.slice(0,freshCount).map(item=>({...item,isReview:false}));
+  for(const review of reviews) session.splice(review.position,0,{...review.item,isReview:true});
+  return session;
+}
+function begin(){
+  state.index=0; state.score=0; state.answered=false;
+  state.session=makeNextSession();
+  if(!state.session.length){
+    byId('welcome').classList.add('hidden'); byId('session').classList.add('hidden'); byId('result').classList.remove('hidden');
+    byId('score').textContent='Готово!';
+    byId('resultText').textContent='На этом этапе новых слов или повторов по графику нет.';
+    byId('mistakes').replaceChildren(); byId('again').classList.add('hidden');
+    progressText();
+    byId('practice').scrollIntoView({behavior:'smooth',block:'start'}); return;
+  }
+  state.wrong=[];
+  byId('welcome').classList.add('hidden'); byId('result').classList.add('hidden'); byId('session').classList.remove('hidden');
+  show(); byId('practice').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function show(){
+  if(state.index>=state.session.length) return finish();
+  state.answered=false;
+  const item=state.session[state.index];
+  byId('hint').textContent=item.hint;
+  byId('position').textContent=`${state.index+1} из ${state.session.length}`;
+  byId('progress').style.width=`${state.index/state.session.length*100}%`;
+  byId('feedback').textContent=''; byId('next').classList.add('hidden');
+  const word=byId('word'); word.replaceChildren();
+  [...item.word].forEach((letter,pos)=>{
+    if(VOWELS.has(letter)){
+      const b=document.createElement('button'); b.type='button'; b.className='vowel-choice'; b.textContent=letter;
+      b.setAttribute('aria-label',`Выбрать гласную ${letter}`); b.onclick=()=>answer(pos); word.appendChild(b);
+    } else { const s=document.createElement('span'); s.className='letter'; s.textContent=letter; word.appendChild(s); }
+  });
+  progressText();
+}
+function answer(choice){
+  if(state.answered) return; state.answered=true;
+  const item=state.session[state.index], correct=choice===item.stress, stat=statsFor(item);
+  state.totalAnswers++; stat.seen++;
+  if(correct){
+    stat.right++;stat.streak++;state.score++;
+    if(stat.streak>=2) delete stat.nextReviewAt;
+    else if(item.isReview && stat.wrong>0) stat.nextReviewAt=state.totalAnswers+20;
+  }else{
+    stat.wrong++;stat.streak=0;stat.nextReviewAt=state.totalAnswers+4;state.wrong.push(item.key);
+  }
+  [...byId('word').querySelectorAll('button')].forEach(btn=>{
+    const pos=[...item.word].findIndex((ch,i)=>VOWELS.has(ch)&&btn===byId('word').children[i]);
+    btn.disabled=true;
+    if(pos===item.stress){btn.classList.add('correct');btn.textContent=btn.textContent.toUpperCase();}
+    else if(pos===choice)btn.classList.add('wrong');
+  });
+  byId('feedback').textContent=correct?'Верно!':`Пока путается. Правильно: ${[...item.word].map((ch,i)=>i===item.stress?ch.toUpperCase():ch).join('')}`;
+  byId('next').classList.remove('hidden'); save(); progressText();
+}
+function finish(){
+  byId('session').classList.add('hidden'); byId('result').classList.remove('hidden');
+  byId('progress').style.width='100%'; byId('score').textContent=`${state.score} из ${state.session.length}`;
+  byId('resultText').textContent=state.score===state.session.length?'Отлично! Все слова в этом раунде верны.':state.score>=7?'Хороший результат. Дальше будут новые слова, а ошибочные вернутся по расписанию.':'Ошибки — подсказка, что повторить. Они появятся снова через несколько слов.';
+  const box=byId('mistakes'); box.replaceChildren();
+  const bad=state.session.filter(item=>state.wrong.includes(item.key));
+  if(bad.length){const title=document.createElement('p');title.textContent='Ошибочные слова вернутся в последующих десятках:';box.appendChild(title);bad.forEach(it=>{const row=document.createElement('div');row.className='mistake-row';row.textContent=[...it.word].map((ch,i)=>i===it.stress?ch.toUpperCase():ch).join('');box.appendChild(row);});}
+  const nextCount=makeNextSession().length, again=byId('again');
+  again.textContent=nextCount===10?'Следующие 10 слов':nextCount===1?'Следующее слово':nextCount<=4&&nextCount>1?`Следующий раунд · ${nextCount} слова`:nextCount?`Следующий раунд · ${nextCount} слов`:'Тренировка завершена';
+  again.classList.toggle('hidden',!nextCount); progressText();
+}
+byId('start').onclick=()=>begin();
+byId('next').onclick=()=>{state.index++;show();};
+byId('again').onclick=()=>begin();
+document.title=DATA.title+' · Русский — проСТО';
+byId('start').setAttribute('aria-label','Начать тренировку по ударениям');
+if(!ITEMS.length){byId('welcome').textContent='Не удалось загрузить список слов.';byId('start').disabled=true;}
+</script></body></html>
