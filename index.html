@@ -108,7 +108,7 @@ const ITEMS = [...new Set(DATA.words)].map(raw => {
   if (stress < 0 || marked.filter(ch => ch === ch.toUpperCase() && ch.toLowerCase() !== ch && VOWELS.has(ch.toLowerCase())).length !== 1) return null;
   return { word: raw.toLowerCase(), stress, key: raw.toLowerCase()+':'+stress, hint: DATA.hints?.[raw] || '' };
 }).filter(Boolean);
-const STORAGE_KEY = 'rus-prosto-stress-v1';
+const STORAGE_KEY = 'rus-prosto-stress-v2';
 let state = { stats: {}, totalAnswers: 0, session: [], wrong: [], index: 0, score: 0, answered: false };
 try {
   const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
